@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input id="value" type="text" value="1" />
+        <input id="double" type="button" value="Double" />
+    </form>
+    <script>
+        function registerClickHandler() {
+            const handleClick = document.querySelector('#double');
+
+            handleClick.addEventListener('click', () => {
+                let inputValue = document.querySelector('#value');
+                let initialValue = parseInt(inputValue.value);
+                if(!isNaN(initialValue)) {                   
+                    let expectValue = initialValue + initialValue;
+                    inputValue.value = expectValue;
+                } else {
+                    inputValue.value = 1;
+                }
+            })
+        }
+        window.onload = registerClickHandler;
+    </script>
+</body>
+</html>
